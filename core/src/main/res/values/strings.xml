@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textview_topic_font">fonts/montserrat_semibold.ttf</string>
+    <string name="textview_title_font">fonts/montserrat_semibold.ttf</string>
+    <string name="textview_vote_font">fonts/montserrat_medium.ttf</string>
+    <string name="textview_date_font">fonts/montserrat_regular.ttf</string>
+    <string name="add_topic_dialog_title">Create a topic</string>
+    <string name="topic_is_required">Topic is required!</string>
+    <string name="create">Create</string>
+    <string name="character_left">%1$d character(s) left</string>
+    <string name="cancel">Cancel</string>
+    <string name="okay">Okay</string>
+</resources>

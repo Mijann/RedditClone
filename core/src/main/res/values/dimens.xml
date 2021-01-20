@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_horizontal">20dp</dimen>
+    <dimen name="padding_vertical">10dp</dimen>
+    <dimen name="margin_vertical">18dp</dimen>
+    <dimen name="margin_horizontal">24dp</dimen>
+    <dimen name="fontNormal">13sp</dimen>
+    <dimen name="fontLarge">15sp</dimen>
+    <dimen name="fontXLarge">20sp</dimen>
+    <dimen name="editTextCornerRadius">15dp</dimen>
+    <dimen name="margin_top">12dp</dimen>
+    <dimen name="margin_md_horizontal">23dp</dimen>
+    <dimen name="margin_md_vertical">35dp</dimen>
+</resources>
