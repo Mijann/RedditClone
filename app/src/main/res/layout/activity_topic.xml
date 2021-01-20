@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="topic"
+            type="com.mijandev.com.redditclone.core.data.entity.TopicEntity" />
+
+        <import type="com.mijandev.com.redditclone.core.util.DateTimeUtils" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/padding_horizontal"
+            android:paddingVertical="@dimen/padding_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.mijandev.com.redditclone.core.ui.MyTextView_Topic
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{topic.topic}"
+                android:textColor="@color/colorJetBlack"
+                android:textSize="@dimen/fontXLarge" />
+
+            <com.mijandev.com.redditclone.core.ui.MyTextView_Date
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/margin_xs_horizontal"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_height="wrap_content"
+                android:text="@{DateTimeUtils.INSTANCE.getTimeAgo(topic.createdAt)}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/fontLarge" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/upvote_image_view"
+                    android:layout_width="@dimen/voteIconLargeSize"
+                    android:layout_height="@dimen/voteIconLargeSize"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/iconPadding"
+                    android:src="@drawable/ic_up_arrow_pressed" />
+
+                <com.mijandev.com.redditclone.core.ui.MyTextView_Vote
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/margin_sm_horizontal"
+                    android:gravity="center"
+                    android:minEms="2"
+                    android:text="@{String.valueOf(topic.upvote)}"
+                    android:textColor="@color/colorOrange"
+                    android:textSize="@dimen/fontLarge" />
+
+                <ImageView
+                    android:id="@+id/downvote_image_view"
+                    android:layout_width="@dimen/voteIconLargeSize"
+                    android:layout_height="@dimen/voteIconLargeSize"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/iconPadding"
+                    android:src="@drawable/ic_down_arrow_pressed" />
+
+                <com.mijandev.com.redditclone.core.ui.MyTextView_Vote
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/margin_sm_horizontal"
+                    android:gravity="center"
+                    android:minEms="2"
+                    android:text="@{String.valueOf(topic.downvote)}"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="@dimen/fontLarge" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="164dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/ic_baseline_arrow"
+            android:tint="@android:color/white"
+            app:backgroundTint="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:useCompatPadding="true" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
