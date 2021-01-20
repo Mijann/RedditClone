@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fontNormal">13sp</dimen>
+    <dimen name="fontLarge">15sp</dimen>
+    <dimen name="voteIconSize">25dp</dimen>
+    <dimen name="voteIconLargeSize">30dp</dimen>
+    <dimen name="deleteIconSize">25dp</dimen>
+    <dimen name="margin_horizontal">18dp</dimen>
+    <dimen name="margin_xs_horizontal">7dp</dimen>
+    <dimen name="margin_sm_horizontal">10dp</dimen>
+    <dimen name="margin_bottom">14dp</dimen>
+    <dimen name="cardCornerRadius">4dp</dimen>
+    <dimen name="cardElevation">2dp</dimen>
+    <dimen name="padding_horizontal">20dp</dimen>
+    <dimen name="padding_vertical">10dp</dimen>
+    <dimen name="margin_top">20dp</dimen>
+    <dimen name="fontXlarge">20sp</dimen>
+    <dimen name="iconPadding">4dp</dimen>
+</resources>

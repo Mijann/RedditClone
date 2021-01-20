@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="TopicLayoutBinding">
+
+        <variable
+            name="currentPosition"
+            type="Integer" />
+
+        <variable
+            name="topic"
+            type="com.mijandev.com.redditclone.core.data.entity.TopicEntity" />
+
+        <variable
+            name="mainHandlerListener"
+            type="com.mijandev.com.redditclone.ui.listener.MainHandlerListener" />
+
+        <import type="com.mijandev.com.redditclone.core.util.DateTimeUtils" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:onClick="@{() ->mainHandlerListener.viewTopic(topic)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        app:cardCornerRadius="@dimen/cardCornerRadius"
+        app:cardElevation="@dimen/cardElevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/padding_horizontal"
+            android:paddingVertical="@dimen/padding_vertical">
+
+            <com.mijandev.com.redditclone.core.ui.MyTextView_Date
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{DateTimeUtils.INSTANCE.getTimeAgo(topic.createdAt)}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/fontNormal" />
+
+            <com.mijandev.com.redditclone.core.ui.MyTextView_Topic
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xs_horizontal"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:text="@{topic.topic}"
+                android:textColor="@color/colorJetBlack"
+                android:textSize="@dimen/fontLarge" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/upvote_image_view"
+                    android:layout_width="@dimen/voteIconSize"
+                    android:layout_height="@dimen/voteIconSize"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/iconPadding"
+                    android:onClick="@{() ->mainHandlerListener.upvoteTopic(topic, currentPosition)}"
+                    android:src="@drawable/upvote_selector" />
+
+                <com.mijandev.com.redditclone.core.ui.MyTextView_Vote
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/margin_sm_horizontal"
+                    android:gravity="center"
+                    android:minEms="2"
+                    android:text="@{Integer.toString(topic.upvote-topic.downvote)}"
+                    android:textColor="@color/colorJetBlack"
+                    android:textSize="@dimen/fontNormal" />
+
+                <ImageView
+                    android:id="@+id/downvote_image_view"
+                    android:layout_width="@dimen/voteIconSize"
+                    android:layout_height="@dimen/voteIconSize"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/iconPadding"
+                    android:onClick="@{() ->mainHandlerListener.downvoteTopic(topic, currentPosition)}"
+                    android:src="@drawable/downvote_selector" />
+
+                <RelativeLayout
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:padding="@dimen/iconPadding"
+                        android:onClick="@{() ->mainHandlerListener.deleteTopic(topic)}"
+                        android:layout_width="@dimen/deleteIconSize"
+                        android:layout_height="@dimen/deleteIconSize"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        app:tint="@color/colorOrange" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
