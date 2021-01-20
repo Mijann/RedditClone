@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp">
+
+    <LinearLayout
+        android:layout_marginVertical="@dimen/margin_md_vertical"
+        android:layout_marginHorizontal="@dimen/margin_md_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.mijandev.com.redditclone.core.ui.MyTextView_Title
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorJetBlack"
+            android:textSize="@dimen/fontXLarge"
+            android:text="@string/add_topic_dialog_title"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"/>
+
+        <com.mijandev.com.redditclone.core.ui.MyEditText
+            android:layout_marginTop="@dimen/margin_top"
+            android:id="@+id/topic_edit_text"
+            android:minLines="5"
+            android:gravity="top|start"
+            android:maxLength="255"
+            android:paddingVertical="@dimen/margin_vertical"
+            android:paddingHorizontal="@dimen/margin_horizontal"
+            android:background="@drawable/background_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.mijandev.com.redditclone.core.ui.MyTextView_Title
+            android:layout_width="wrap_content"
+            android:id="@+id/char_text_view"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_gravity="end"
+            android:textColor="@color/colorMineral"
+            android:textSize="@dimen/fontNormal"
+            android:layout_height="wrap_content"/>
+
+        <com.mijandev.com.redditclone.core.ui.MyButton
+            android:layout_marginTop="@dimen/margin_vertical"
+            android:id="@+id/add_button"
+            android:layout_gravity="end"
+            android:text="@string/create"
+            android:paddingHorizontal="@dimen/margin_horizontal"
+            android:paddingVertical="@dimen/padding_horizontal"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:textSize="@dimen/fontLarge"
+            android:background="@drawable/button_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
