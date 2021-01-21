@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), MainHandlerListener {
             adapter = topicAdapter
         }
 
-        mainViewModel.topics.observe(this, {
+        mainViewModel.topics.observe(this@MainActivity, {
             topicAdapter.topics = it
         })
 
@@ -150,6 +150,7 @@ class MainActivity : AppCompatActivity(), MainHandlerListener {
     private fun updateTopics(newTopics: MutableList<TopicEntity>) {
         Collections.sort(newTopics, TopicSorter())
         topicAdapter.topics = newTopics
+        mainViewModel.updateTopics(newTopics)
     }
 
     override fun onStop() {

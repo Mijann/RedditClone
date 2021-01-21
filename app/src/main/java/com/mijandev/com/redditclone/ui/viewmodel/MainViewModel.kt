@@ -52,4 +52,8 @@ class MainViewModel(private val topicRepository: TopicRepository) : ViewModel() 
             topicRepository.deleteTopic(topic.id.toString())
         }
     }
+
+    fun updateTopics(newTopics : List<TopicEntity>) {
+        _topics.postValue(newTopics)
+    }
 }
