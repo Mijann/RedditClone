@@ -61,7 +61,7 @@
                     android:layout_height="@dimen/voteIconSize"
                     android:layout_gravity="center"
                     android:padding="@dimen/iconPadding"
-                    android:onClick="@{() ->mainHandlerListener.upvoteTopic(topic, currentPosition)}"
+                    android:onClick="@{() ->mainHandlerListener.upvoteTopic(topic)}"
                     android:src="@drawable/upvote_selector" />
 
                 <com.mijandev.com.redditclone.core.ui.MyTextView_Vote
@@ -81,7 +81,7 @@
                     android:layout_height="@dimen/voteIconSize"
                     android:layout_gravity="center"
                     android:padding="@dimen/iconPadding"
-                    android:onClick="@{() ->mainHandlerListener.downvoteTopic(topic, currentPosition)}"
+                    android:onClick="@{() ->mainHandlerListener.downvoteTopic(topic)}"
                     android:src="@drawable/downvote_selector" />
 
                 <RelativeLayout

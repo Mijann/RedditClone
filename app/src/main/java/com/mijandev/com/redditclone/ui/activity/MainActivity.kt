@@ -108,20 +108,26 @@ class MainActivity : AppCompatActivity(), MainHandlerListener {
         showChoiceDialog = null
     }
 
-    override fun upvoteTopic(topicEntity: TopicEntity, position: Int) {
+    override fun upvoteTopic(topicEntity: TopicEntity) {
         topicEntity.upvote++
         mainViewModel.updateTopic(topicEntity)
         val newTopics = topicAdapter.topics.toMutableList()
-        newTopics[position] = topicEntity
+        val index = newTopics.indexOfFirst { it.id == topicEntity.id }
+        if (index >= 0) {
+            newTopics[index] = topicEntity
+        }
         updateTopics(newTopics)
         topicAdapter.notifyDataSetChanged()
     }
 
-    override fun downvoteTopic(topicEntity: TopicEntity, position: Int) {
+    override fun downvoteTopic(topicEntity: TopicEntity) {
         topicEntity.downvote++
         mainViewModel.updateTopic(topicEntity)
         val newTopics = topicAdapter.topics.toMutableList()
-        newTopics[position] = topicEntity
+        val index = newTopics.indexOfFirst { it.id == topicEntity.id }
+        if (index >= 0) {
+            newTopics[index] = topicEntity
+        }
         updateTopics(newTopics)
         topicAdapter.notifyDataSetChanged()
     }
@@ -149,7 +155,6 @@ class MainActivity : AppCompatActivity(), MainHandlerListener {
 
     private fun updateTopics(newTopics: MutableList<TopicEntity>) {
         Collections.sort(newTopics, TopicSorter())
-        topicAdapter.topics = newTopics
         mainViewModel.updateTopics(newTopics)
     }
 
